@@ -3,7 +3,7 @@ Connect4 game which utilizes an AI with varying difficulties based on recusively
 
 ## Playing the game
 Make sure your device has the tkinter package installed before running the script.
-Once executed, GUI opens, select the AI dificulty using the Sliding bar and hit "New Game" to begin.
+Once executed and the GUI opens, select the AI dificulty using the Sliding bar and hit "New Game" to begin.
 
 ## Enjoy!
 
