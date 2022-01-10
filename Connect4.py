@@ -1,6 +1,5 @@
 #Vlad Vitalaru
-#Final
-#cs 121
+
 from tkinter import *
 import random
 
@@ -84,8 +83,8 @@ class Connect4:
         self.playerTurn = False
         self.ai = None
         self.plyValue = 0
-        self.ox = "X"
-        self.opp = "O"
+        self.ox = "X"                #Player is X    
+        self.opp = "O"               #AI is O
 
         self.window = window
         self.frame = Frame(window, bg = "DodgerBlue2")
@@ -96,9 +95,11 @@ class Connect4:
         self.CanvasHeight = 480
         self.CanvasWidth = 560
         
+        #configure Quit button
         self.quitButton = Button(self.frame, text='Quit', command=self.quitGame, bg = "Red", font = "Helvetica 15")
         self.quitButton.pack(side=LEFT, ipady = 10, ipadx = 10, padx = 3)
-
+        
+        #configure New Game button
         self.newGameButton = Button(self.frame, text = "New Game", bg = "DodgerBlue2", command=self.NewGame, font = "Helvetica")
         self.newGameButton.pack(side=RIGHT, padx=3)
 
@@ -106,7 +107,8 @@ class Connect4:
         highlightbackground = "DodgerBlue2")
         self.draw.bind('<Button-1>', self.mouseInput)
         self.draw.pack(fill = BOTH, expand = True)
-
+        
+        #configure Difficulty slider 
         self.plyslider = Scale(self.frame, from_=0, to=5, orient = HORIZONTAL, bg = "DodgerBlue2",
         label = "Dificulty", troughcolor = "Red",length = 150, highlightbackground = "DodgerBlue2",
         cursor = "arrow", activebackground = "DodgerBlue2", fg = "White", command = self.setply, font = "Helvetica 15")
