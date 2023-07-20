@@ -96,26 +96,26 @@ class Connect4:
         self.CanvasWidth = 560
         
         #configure Quit button
-        self.quitButton = Button(self.frame, text='Quit', command=self.quitGame, bg = "Red", font = "Helvetica 15")
-        self.quitButton.pack(side=LEFT, ipady = 10, ipadx = 10, padx = 3)
+        self.quitButton = Button(self.frame, text='Quit', command=self.quitGame, bg ="Red3", fg="White smoke", font="SegoeUI 16 bold")
+        self.quitButton.pack(side=RIGHT,padx=10, ipadx=30, ipady=1,)
         
         #configure New Game button
-        self.newGameButton = Button(self.frame, text = "New Game", bg = "DodgerBlue2", command=self.NewGame, font = "Helvetica")
-        self.newGameButton.pack(side=RIGHT, padx=3)
+        self.newGameButton = Button(self.frame, text="New Game", bg ="lime green", fg="white smoke", command=self.NewGame, font="SegoeUI 16 bold")
+        self.newGameButton.pack(side=RIGHT, padx=2, ipady=1)
 
-        self.draw = Canvas(window, height=self.CanvasHeight, width=self.CanvasWidth, bg = "DodgerBlue2",
+        self.draw = Canvas(window, height=self.CanvasHeight, width=self.CanvasWidth, bg ="DodgerBlue2",
         highlightbackground = "DodgerBlue2")
         self.draw.bind('<Button-1>', self.mouseInput)
-        self.draw.pack(fill = BOTH, expand = True)
+        self.draw.pack(fill=BOTH, expand=True)
         
         #configure Difficulty slider 
-        self.plyslider = Scale(self.frame, from_=0, to=5, orient = HORIZONTAL, bg = "DodgerBlue2",
-        label = "Dificulty", troughcolor = "Red",length = 150, highlightbackground = "DodgerBlue2",
-        cursor = "arrow", activebackground = "DodgerBlue2", fg = "White", command = self.setply, font = "Helvetica 15")
-        self.plyslider.pack(side = LEFT )
+        self.plyslider = Scale(self.frame, from_=0, to=5, orient=HORIZONTAL, bg="DodgerBlue2",
+        label= "   Difficulty:", troughcolor="powder blue", length=150, highlightbackground="DodgerBlue2",
+        cursor="arrow", activebackground="DodgerBlue2", fg="White", command=self.setply, font="SegoeUI 16 bold")
+        self.plyslider.pack(side = LEFT, padx=8)
 
-        self.message = Label(text='Choose a dificulty level!',bg="DodgerBlue2",fg="White", font='Helvetica 35')
-        self.message.pack(fill=X)
+        self.message = Label(text='Choose a difficulty level!',bg="DodgerBlue2",fg="White", font='SegoeUI 20 bold')
+        self.message.pack(fill=BOTH, ipady=12)
 
         for row in range(height): #6
             boardRow = []
