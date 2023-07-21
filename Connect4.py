@@ -41,8 +41,8 @@ class Connect4:
         self.draw.pack(fill=BOTH, expand=True)
         
         #Difficulty slider 
-        self.plyslider = Scale(self.frame, from_=0, to=5, orient=HORIZONTAL, bg="DodgerBlue2",
-        label= "   Difficulty:", troughcolor="snow", length=150, highlightbackground="DodgerBlue2",
+        self.plyslider = Scale(self.frame, from_=0, to=5, orient=HORIZONTAL, showvalue=0, bg="DodgerBlue2",
+        label= " Difficulty:", troughcolor="snow", length=150, highlightbackground="DodgerBlue2",
         cursor="arrow", activebackground="DodgerBlue2", fg="White", command=self.setply, font="SegoeUI 16 bold")
         self.plyslider.pack(side = LEFT, padx=8)
 
@@ -105,6 +105,7 @@ class Connect4:
     def newGame(self):
         self.ai = AIPlayer('O','Random', self.plyValue)
         self.gameOn = True
+        self.plyslider.config(label= " Difficulty: " + str(self.plyValue))
         self.playerTurn = True
         self.message.config(text="Choose a column!")
         self.clear()
